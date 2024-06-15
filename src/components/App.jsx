@@ -26,16 +26,22 @@ import HomePage from "./Pages/HomePage";
 
 import MoviePage from "./Pages/MoviePage";
 import MovieDetailPage from "./PageDetail/MovieDetail";
+import CastMoviePage from "./Pages/CastMovie";
+import ReviewsMoviePage from "./Pages/ReviewsMovie";
+import Layout from "./Pages/Layout";
 
 export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-
-        <Route path="/movie" element={<MoviePage/>}/>
-        <Route path="/movie/:movieId" element={<MovieDetailPage/>}/>
-        <Route></Route>
+        <Route path="/" element={<Layout/>}>
+         <Route index element={<HomePage/>}/>
+         <Route path="/movies" element={<MoviePage/>}/>
+         <Route path="/movies/:movieId" element={<MovieDetailPage/>}>
+           <Route path="cast" element={<CastMoviePage/>}/>
+           <Route path="reviews" element={<ReviewsMoviePage/>}/>
+         </Route>
+         </Route> 
       </Routes>
     </div>
   );

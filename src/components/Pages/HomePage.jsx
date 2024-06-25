@@ -10,6 +10,7 @@ function HomePage(){
         .then(trending => setTrending(trending.results))
         .catch(error => console.log(error))
     }, [])
+    
     return(
         <>
         <h1>Trending today</h1>

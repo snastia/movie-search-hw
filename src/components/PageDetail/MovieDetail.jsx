@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 
 function MovieDetailPage(){
     const {movieId} = useParams()
@@ -16,13 +16,20 @@ function MovieDetailPage(){
         <>
         <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} width={550}/>
         <h2>{movie.original_title}</h2>
-        <p>User score: {movie.vote_average}/10</p>
+         <p>User score: {movie.vote_average}/10</p>
         <h3>Overview</h3>
-        <p>{movie.overview}</p>
+         <p>{movie.overview}</p>
         <h4>Genres</h4>
-        {/* {movie && movie.map((movie) => {
-           return <p></p>
-        })} */}
+         <p></p>
+        <p>Additional information</p> 
+        <ul>
+          <li>
+            <Link as={Link} to={`cast`}>Cast</Link>
+            </li>
+          <li>
+            <Link as={Link} to={`reviews`}>Reviews</Link>
+            </li>
+        </ul>
         <Outlet/>
         </>
     )

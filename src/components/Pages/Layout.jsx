@@ -6,6 +6,7 @@ function Layout(){
          <NavLink to='/'>
            Home
         </NavLink>
+        <br />
         <NavLink to='/movies'>
            Movies
        </NavLink>
